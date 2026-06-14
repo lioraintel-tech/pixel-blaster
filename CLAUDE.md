@@ -56,13 +56,25 @@ MENU → LEVEL_INTRO → PLAYING → LEVEL_COMPLETE → LEVEL_INTRO (next level)
 
 **High score** persists via `localStorage` key `'pixelBlasterHigh'`.
 
-## Commit conventions
+## Commit and push discipline
+
+**After every meaningful change, commit and push immediately.** Do not batch multiple features into one commit. The goal is that the GitHub remote always reflects the current working state so no work is ever lost.
+
+Commit after: any bug fix, any new feature, any tuning pass, any refactor — even small ones.
 
 Use PowerShell here-strings for multi-line commit messages (heredoc syntax doesn't work in PowerShell):
 ```powershell
+git add <files>
 git commit -m @'
-Short summary line
+Short summary line (what changed and why)
 
-Body detail here.
+Optional detail if the why isn't obvious.
 '@
+git push
 ```
+
+Good commit message examples:
+- `Add Sniper enemy type with long-range attack`
+- `Fix bullet collision skipping fast-moving enemies`
+- `Tune tank HP and spawn rate for better level 4 pacing`
+- `Add combo multiplier to scoring system`
